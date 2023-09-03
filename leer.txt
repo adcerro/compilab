@@ -1,0 +1,15 @@
+Lenguaje: R
+Temas:
+  1. Determinar si una palabra tiene hiatos
+  2. Filtrar textos que contengan el error de n seguida de b o n seguida de p y reemplazar por m en ambos casos.
+
+1)
+  Σ = {a,b,c,...,z}
+  letra → [a-z]	vocal → [a,e,i,o,u]	hiato → vocalvocal
+  def → ((letra)*hiato(letra)*)*
+
+2)
+  Σ = {a,b,c,...,z}
+  letra → [a-z]	error → nb|np	
+  def → ((letra)*error(letra)*)*
+

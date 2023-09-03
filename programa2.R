@@ -1,0 +1,6 @@
+file <- read.delim(file.choose(), sep = "\t", header = FALSE)
+bfix <- gsub("[Nn][Bb]", "mb", file)
+pfix <- gsub("[Nn][Pp]", "mp", bfix)
+file_path <- file.path("result.txt")
+file.create(file_path)
+writeLines(pfix, file_path)
