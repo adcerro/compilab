@@ -5,11 +5,42 @@ Temas:
 
 1)
   Σ = {a,b,c,...,z}
-  letra → [a-z]	vocal → [a,e,i,o,u]	hiato → vocalvocal
-  def → ((letra)*hiato(letra)*)*
+  letra → [a-z]	
+  vocal → [a,e,i,o,u]	
+  hiato → vocalvocal
+  def → ((letra)*hiato(letra)*)+
+
+  Pasando a R se pueden específicar las vocales (incluyendo mayúsculas,minúsculas y tildes) así: [AaáEeéIiíOoóUuú]
+  
+  programa1.R
+  El programa pide por consola que se ingrese una palabra
+  Luego con la función grep se evalua la palabra en busca de una coincidencia con la expresión regular ingresada.
+  De encontrarse una coincidencia la fucion grep retorna un arreglo de una dimensión, de lo contrario retorna un arreglo de dimensiones nulas
+  En base a la longitud del arreglo se imprime en consola si la palabra ingresada tiene o no hiatos.
+
+  Modo de uso:
+  Ejecute el script programa1.R, al hacerlo la terminal le pedirá que ingrese una palabra.
+  Ingrese la palabra y pulse enter
+  En la terminal se observará una respuesta de si la palabra tiene hiato o no
 
 2)
   Σ = {a,b,c,...,z}
-  letra → [a-z]	error → nb|np	
-  def → ((letra)*error(letra)*)*
+  letra → [a-z]	
+  error → nb|np	
+  def → ((letra)*error(letra)*)+
+
+  Ahora bien, en R la expresión a|b puede escribirse como [ab]
+  por lo tanto la expresión regular "error" se puede escribir como [Nn][Bb]|[Nn][Pp]
+  Ahora como se quiere sustituir adecuadamente los errores se usa gsub dos veces, una con [Nn][Bb] y otra con [Nn][Pp] 
+
+  programa2.R
+  Se usa la función "read.delim" para cargar un archivo de texto y "file.choose" permite al usuario elegir el archivo que desea cargar.
+  La función "gsub" es la encargada de buscar en el archivo la expresión regular que contenga "nb" o "np" y si existe, sustituirlo por "mb" o "mp", y los nuevos datos son almacenados en una nueva variable.
+  Luego "file.path" crea una ruta de archivo llamada "result.txt", que es el nombre del archivo en el que se guardarán los resultados y "file.create" crea el archivo en esta misma ruta.
+  Por último la función "writeLines" se utiliza para escribir los datos de la nueva variable en el archivo "result.txt"
+
+  Modo de uso:
+  Ejecute el script programa2.R, al hacerlo aparecerá una ventana de su explorador de archivos
+  Seleccione un archivo que este en formato .txt
+  En donde se encuentre guardado el script aparecerá un nuevo archivo llamado resultado.txt con los errores ortográficos sustituidos.
 
