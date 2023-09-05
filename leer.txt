@@ -17,6 +17,7 @@ Temas:
   Luego con la función grep se evalua la palabra en busca de una coincidencia con la expresión regular ingresada.
   De encontrarse una coincidencia la fucion grep retorna un arreglo de una dimensión, de lo contrario retorna un arreglo de dimensiones nulas
   En base a la longitud del arreglo se imprime en consola si la palabra ingresada tiene o no hiatos.
+  (Nota: Se consideran hiatos aquellas palabaras que tienen dos vocales juntas o que tienen dos vocales con una "h" en el medio)
 
   Modo de uso:
   Ejecute el script programa1.R, al hacerlo la terminal le pedirá que ingrese una palabra.
